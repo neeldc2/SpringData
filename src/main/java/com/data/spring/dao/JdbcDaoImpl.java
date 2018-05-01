@@ -18,7 +18,7 @@ public class JdbcDaoImpl {
 	
 	private DataSource dataSource;
 	
-	private JdbcTemplate jdbcTemplate = new JdbcTemplate();
+	private JdbcTemplate jdbcTemplate;
 	
 	public String getCircleName(int circleId) {
 		String sql = "SELECT name FROM circle where id = ?";
