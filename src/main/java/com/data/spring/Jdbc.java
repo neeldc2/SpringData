@@ -13,10 +13,17 @@ public class Jdbc
     	AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
     	JdbcDaoImpl dao = context.getBean("jdbcDaoImpl", JdbcDaoImpl.class);
     	
-    	Circle circle = dao.getCircle(1);
+    	System.out.println("count = " + dao.getCircleCount());
+    	System.out.println(dao.getCircleName(1));
+    	
+    	Circle circle = dao.getCircleFromId(2);
+    	System.out.println(circle.getId());
     	System.out.println(circle.getName());
     	
-    	context.close();
+    	dao.insertCircle(new Circle(3, "c"));
     	
+    	System.out.println("count = " + dao.getAllCircle().size());
+    	
+    	dao.createTable();
     }
 }
