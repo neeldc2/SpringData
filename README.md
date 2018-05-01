@@ -2,6 +2,12 @@
 
 Java Brains Spring Data
 
-NamedParameter JdbcTemplate is used.
+Dao Support class is used.
 Changes:
-insertCircle() definition has changed to include NamedParameter JdbcTemplate
+1. NamedParameterJdbcDaoImpl class that extends NamedParameterJdbcDaoSupport 
+2. added this bean to spring.xml
+	<bean id="namedParameterJdbcDaoImpl" class="com.data.spring.dao.NamedParameterJdbcDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+Similarly, other Dao Support classes can be used.
