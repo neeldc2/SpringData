@@ -20,10 +20,9 @@ public class Jdbc
     	System.out.println(circle.getId());
     	System.out.println(circle.getName());
     	
-    	dao.insertCircle(new Circle(3, "c"));
+    	dao.insertCircle(new Circle(4, "d"));
     	
     	System.out.println("count = " + dao.getAllCircle().size());
     	
-    	dao.createTable();
     }
 }
